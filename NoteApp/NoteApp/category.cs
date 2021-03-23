@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
+    /// <summary>
+    /// Тип данных перечисления категорий заметок.
+    /// </summary>
     public enum Category
     {
         Work,

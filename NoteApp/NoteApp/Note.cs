@@ -6,16 +6,36 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
+    /// <summary>
+    /// Класс заметок
+    /// </summary>
     public class Note
 
     {
-
+        /// <summary>
+        /// Название заметки.
+        /// </summary>
         private string _name;
+        /// <summary>
+        /// Категория заметки.
+        /// </summary>
         private Category _category;
+        /// <summary>
+        /// Текст заметки.
+        /// </summary>
         private string _textNote;
+        /// <summary>
+        /// Дата и время создания заметки.
+        /// </summary>
         private DateTime _dateCreate;
+        /// <summary>
+        /// Дата и время последнего редактирования.
+        /// </summary>
         private DateTime _dateModific;
 
+        /// <summary>
+        /// Свойство категории заметки.
+        /// </summary>
         public Category Category
         {
             get { return _category; }
@@ -67,7 +87,7 @@ namespace NoteApp
         }
 
         /// <summary>
-        /// Свойство назнавия заметки.
+        /// Свойство названия заметки.
         /// </summary>
         public string Name
         {
@@ -94,6 +114,9 @@ namespace NoteApp
             }
         }
 
+        /// <summary>
+        /// Свойство текста заметки
+        /// </summary>
         public string TextNote
         {
             get { return _textNote; }
@@ -102,6 +125,9 @@ namespace NoteApp
 
         }
 
+        /// <summary>
+        /// Свойство даты создания заметки.
+        /// </summary>
         public DateTime DateCreate
         {
 
@@ -109,7 +135,9 @@ namespace NoteApp
 
         }
 
-
+        /// <summary>
+        /// Свойство даты последнего редактирования заметки.
+        /// </summary>
         public DateTime DateModific
         {
             get { return _dateModific; }

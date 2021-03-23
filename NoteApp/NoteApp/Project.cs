@@ -6,11 +6,32 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
+    /// <summary>
+    /// Класс Project, хранящий данные о заметках.
+    /// </summary>
     public class Project
     {
-        private List<Note> notes; 
+        /// <summary>
+        /// Список заметок.
+        /// </summary>
+        private List<Note> notes;
 
-    
-
+        /// <summary>
+        /// Своство заметок.
+        /// </summary>
+        public List<Note> Notes
+        {
+            get { return notes; }
+            set
+            {
+                notes = value;
+            }
+        }
     }
+
+
+
+
+
 }
+
