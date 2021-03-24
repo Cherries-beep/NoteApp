@@ -19,7 +19,10 @@ namespace NoteApp
             }
         }
 
-        public static void SaveDate(Project project, string nameFile)
+        /// <summary>
+        /// Метод сохранения объекта Project в файл.
+        /// </summary>
+                public static void SaveData(Project project, string nameFile)
         {
             //Создаём экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
@@ -31,7 +34,11 @@ namespace NoteApp
                 serializer.Serialize(writer, project);
             }
         }
-        public static Project LoadDate(string nameFile)
+
+        /// <summary>
+        /// Метод загрузки объекта Project из файла.
+       ///</summary>
+        public static Project LoadData(string nameFile)
         {
             Project project = null;
             //Создаём экземпляр сериализатора

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace NoteApp
 {
@@ -14,21 +15,20 @@ namespace NoteApp
         /// <summary>
         /// Список заметок.
         /// </summary>
-        private List<Note> notes;
+        private List<Note> _notes;
 
         /// <summary>
         /// Своство заметок.
         /// </summary>
         public List<Note> Notes
         {
-            get { return notes; }
+            get { return _notes; }
             set
             {
-                notes = value;
+                _notes = value;
             }
         }
     }
-
 
 
 
