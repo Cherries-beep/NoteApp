@@ -7,31 +7,33 @@ using System.Threading.Tasks;
 namespace NoteApp
 {
     /// <summary>
-    /// Класс заметок
+    /// Заметки
     /// </summary>
-    public class Note
-
+    public class Note : ICloneable
     {
         /// <summary>
         /// Название заметки.
         /// </summary>
         private string _name;
+        
         /// <summary>
         /// Категория заметки.
         /// </summary>
         private Category _category;
+        
         /// <summary>
         /// Текст заметки.
         /// </summary>
-        private string _textNote;
+        private string _text;
+        
         /// <summary>
         /// Дата и время создания заметки.
         /// </summary>
-        private DateTime _dateCreate;
+        private DateTime _created;
         /// <summary>
         /// Дата и время последнего редактирования.
         /// </summary>
-        private DateTime _dateModific;
+        private DateTime _modified;
 
         /// <summary>
         /// Свойство категории заметки.
@@ -41,48 +43,7 @@ namespace NoteApp
             get { return _category; }
             set
             {
-                switch (value)
-                {
-                    case Category.Work:
-                        {
-                            _category = Category.Work;
-                            break;
-                        }
-                    case Category.Home:
-                        {
-                            _category = Category.Home;
-                            break;
-                        }
-                    case NoteApp.Category.HealthAndSport:
-                        {
-                            _category = NoteApp.Category.HealthAndSport;
-                            break;
-                        }
-                    case Category.People:
-                        {
-                            _category = Category.People;
-                            break;
-                        }
-                    case Category.Documents:
-                        {
-                            _category = Category.Documents;
-                            break;
-                        }
-                    case Category.Finance:
-                        {
-                            _category = Category.Finance;
-                            break;
-                        }
-                    case Category.Different:
-                        {
-                            _category = Category.Different;
-                            break;
-                        }
-                    default:
-
-                        break;
-                }
-
+                _category = value;
             }
         }
 
@@ -117,11 +78,11 @@ namespace NoteApp
         /// <summary>
         /// Свойство текста заметки
         /// </summary>
-        public string TextNote
+        public string NoteText
         {
-            get { return _textNote; }
+            get { return _text; }
 
-            set { _textNote = value; }
+            set { _text = value; }
 
         }
 
@@ -131,7 +92,7 @@ namespace NoteApp
         public DateTime DateCreate
         {
 
-            get { return _dateCreate; }
+            get { return _created; }
 
         }
 
@@ -140,16 +101,20 @@ namespace NoteApp
         /// </summary>
         public DateTime DateModific
         {
-            get { return _dateModific; }
+            get { return _modified; }
 
             set
             {
-                _dateModific = DateTime.Now;
+                _modified = DateTime.Now;
 
             }
 
         }
 
+        public object Clone()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     

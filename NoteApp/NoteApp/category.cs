@@ -17,6 +17,6 @@ namespace NoteApp
         People,
         Documents,
         Finance,
-        Different
+        Other
     }
 }

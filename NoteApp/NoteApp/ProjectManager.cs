@@ -22,12 +22,12 @@ namespace NoteApp
         /// <summary>
         /// Метод сохранения объекта Project в файл.
         /// </summary>
-                public static void SaveData(Project project, string nameFile)
+        public static void SaveData(Project project, string FileName)
         {
             //Создаём экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для записи в файл с указанием пути
-            using (StreamWriter sw = new StreamWriter(nameFile))
+            using (StreamWriter sw = new StreamWriter(FileName))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 //Вызываем сериализацию и передаем объект, который хотим сериализовать
@@ -38,13 +38,13 @@ namespace NoteApp
         /// <summary>
         /// Метод загрузки объекта Project из файла.
        ///</summary>
-        public static Project LoadData(string nameFile)
+        public static Project LoadData(string FileName)//проверки
         {
             Project project = null;
             //Создаём экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для чтения из файла с указанием пути
-            using (StreamReader sr = new StreamReader(nameFile))
+            using (StreamReader sr = new StreamReader(FileName))
             using (JsonReader reader = new JsonTextReader(sr))
             {
                 //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
