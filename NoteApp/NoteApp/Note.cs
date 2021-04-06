@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NoteApp
 {
@@ -36,7 +33,7 @@ namespace NoteApp
         private DateTime _modified;
 
         /// <summary>
-        /// Свойство категории заметки.
+        /// Устанавливает и возвращает значение категории заметки.
         /// </summary>
         public Category Category
         {
@@ -48,7 +45,7 @@ namespace NoteApp
         }
 
         /// <summary>
-        /// Свойство названия заметки.
+        /// Устанавливает и возвращает значение названия заметки.
         /// </summary>
         public string Name
         {
@@ -76,7 +73,7 @@ namespace NoteApp
         }
 
         /// <summary>
-        /// Свойство текста заметки
+        /// Устанавливает и возвращает значение текста заметки
         /// </summary>
         public string NoteText
         {
@@ -87,7 +84,7 @@ namespace NoteApp
         }
 
         /// <summary>
-        /// Свойство даты создания заметки.
+        /// Устанавливает и возвращает значение даты создания заметки.
         /// </summary>
         public DateTime DateCreate
         {
@@ -97,7 +94,7 @@ namespace NoteApp
         }
 
         /// <summary>
-        /// Свойство даты последнего редактирования заметки.
+        /// Устанавливает и возвращает значение даты последнего редактирования заметки.
         /// </summary>
         public DateTime DateModific
         {
