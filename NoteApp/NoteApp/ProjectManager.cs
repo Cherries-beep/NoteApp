@@ -25,6 +25,7 @@ namespace NoteApp
             {
                 Directory.CreateDirectory(folder);
             }
+            //Создаём экземпляр сериализатора
             var serializer = new JsonSerializer();
             //Открываем поток для записи в файл с указанием пути
             using (StreamWriter sw = new StreamWriter(FileName))

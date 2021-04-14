@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace NoteApp
 {
     /// <summary>
@@ -11,7 +10,7 @@ namespace NoteApp
         /// <summary>
         /// Название заметки.
         /// </summary>
-        private string _name;
+        private string _name = "Untitled";
         
         /// <summary>
         /// Категория заметки.
@@ -22,11 +21,12 @@ namespace NoteApp
         /// Текст заметки.
         /// </summary>
         private string _text;
-        
+
         /// <summary>
         /// Дата и время создания заметки.
         /// </summary>
         private DateTime _created;
+
         /// <summary>
         /// Дата и время последнего редактирования.
         /// </summary>
@@ -41,11 +41,13 @@ namespace NoteApp
             set
             {
                 _category = value;
+                DateModific = DateTime.Now;
             }
         }
 
         /// <summary>
-        /// Устанавливает и возвращает значение названия заметки.
+        /// Устанавливает или возвращает значение названия заметки.
+        ///Устанавливает время последнего изменения.
         /// </summary>
         public string Name
         {
@@ -54,19 +56,20 @@ namespace NoteApp
             set
             {
 
-                if (value.Length < 50)
+                if (value.Length > 50)
 
                 {
                     throw new ArgumentException("Количество символов в заметке не может превышать 50");
                 }
-                else if (value.Length != 0)
+                else if (value == "")
                 {
-                    throw new ArgumentException("Количество символов в заметке не может быть нулевым");
+                    _name = "Untitled";
+                    DateModific = DateTime.Now;
                 }
-
                 else
                 {
                     _name = value;
+                    DateModific = DateTime.Now;
                 }
 
             }
@@ -78,8 +81,11 @@ namespace NoteApp
         public string NoteText
         {
             get { return _text; }
-
-            set { _text = value; }
+            set 
+            {
+                _text = value;
+                DateModific = DateTime.Now;
+            }
 
         }
 
@@ -90,6 +96,11 @@ namespace NoteApp
         {
 
             get { return _created; }
+
+            private set
+            {
+                _created = DateTime.Now;
+            }
 
         }
 
@@ -108,12 +119,13 @@ namespace NoteApp
 
         }
 
+        /// <summary>
+        /// Реализация интерфейса IClonable
+        /// </summary>
         public object Clone()
         {
-            throw new NotImplementedException();
+            return this.MemberwiseClone();
         }
     }
-
-    
 
 }
