@@ -213,7 +213,7 @@ namespace NoteAppUI
 
         private void MainForm_KeyDownPanel(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode.ToString() == "Delete")
+            if (e.KeyCode == Keys.Delete)
             {
                 RemoveNote();
             }
@@ -261,6 +261,36 @@ namespace NoteAppUI
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AddNoteButton_Click_1(object sender, EventArgs e)
+        {
+            AddNote();
+        }
+
+        private void EditNoteButton_Click_1(object sender, EventArgs e)
+        {
+            EditNote();
+        }
+
+        private void DeleteNoteButton_Click_1(object sender, EventArgs e)
+        {
+            RemoveNote();
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

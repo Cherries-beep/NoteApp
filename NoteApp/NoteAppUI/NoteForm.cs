@@ -49,6 +49,31 @@ namespace NoteAppUI
             _note.Category = (Category)CategoryComboBox.SelectedItem;
         }
 
+        private void MainTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _note.NoteText = MainTextBox.Text;
+        }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            if (TitleTextBox.BackColor == Color.LightSalmon)
+            {
+                MessageBox.Show("Note name is too large: more than 50 characters", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
         /// <summary>
         /// Выводит значения при загрузке данных
         /// </summary>
@@ -73,7 +98,6 @@ namespace NoteAppUI
             catch
             {
                 TitleTextBox.BackColor = Color.LightSalmon;
-
                 TitleToolTip.Active = true;
             }
         }
@@ -97,5 +121,20 @@ namespace NoteAppUI
         {
 
         }
+
+        private void MainTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+       /* private void TitleTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }*/
+
+        /* private void TitleTextBox_TextChanged_1(object sender, EventArgs e)
+         {
+
+         }*/
     }
 }

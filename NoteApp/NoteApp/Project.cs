@@ -11,7 +11,7 @@ namespace NoteApp
         /// <summary>
         /// Список заметок.
         /// </summary>
-        private List<Note> _notes;
+        private List<Note> _notes = new List<Note>();
 
         /// <summary>
         /// Возвращает или задает список заметок.

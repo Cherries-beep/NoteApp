@@ -25,12 +25,12 @@ namespace NoteApp
         /// <summary>
         /// Дата и время создания заметки.
         /// </summary>
-        private DateTime _created;
+        private DateTime _created = DateTime.Now;
 
         /// <summary>
         /// Дата и время последнего редактирования.
         /// </summary>
-        private DateTime _modified;
+        private DateTime _modified = DateTime.Now;
 
         /// <summary>
         /// Устанавливает и возвращает значение категории заметки.
@@ -97,27 +97,24 @@ namespace NoteApp
 
             get { return _created; }
 
-            private set
-            {
-                _created = DateTime.Now;
-            }
+            
 
         }
 
         /// <summary>
         /// Устанавливает и возвращает значение даты последнего редактирования заметки.
         /// </summary>
-        public DateTime DateModific
+        public DateTime DateModific 
         {
             get { return _modified; }
 
             set
             {
-                _modified = DateTime.Now;
+                _modified = value;
 
             }
 
-        }
+        } 
 
         /// <summary>
         /// Реализация интерфейса IClonable
