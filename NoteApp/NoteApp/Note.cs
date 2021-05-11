@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace NoteApp
 {
@@ -94,12 +95,9 @@ namespace NoteApp
         /// </summary>
         public DateTime DateCreate
         {
-
             get { return _created; }
-
-            
-
-        }
+            private set { _created = DateTime.Now; }
+    }
 
         /// <summary>
         /// Устанавливает и возвращает значение даты последнего редактирования заметки.
@@ -122,6 +120,43 @@ namespace NoteApp
         public object Clone()
         {
             return this.MemberwiseClone();
+        }
+
+        /// <summary>
+        /// Создает экземпляр <see cref="Note"> по умолчанию
+        /// </summary>
+        public Note()
+        {
+        }
+        /// <summary>
+        /// Создает экземпляр <see cref="Note"> для сериализации и десериализации
+        /// </summary>
+        /// <param name="title">Название заметки</param>
+        /// <param name="text">Текст заметки</param>
+        /// <param name="category">Категория заметки</param>
+        /// <param name="created">Время создания заметки</param>
+        /// <param name="modified">Время последнего редактирования заметки</param>
+        [JsonConstructor]
+        public Note(string name, string text, Category category,
+            DateTime created, DateTime modified)
+        {
+            Name = name;
+            NoteText = text;
+            Category = category;
+            DateCreate = created;
+            DateModific = modified;
+        }
+
+        /// <summary>
+        /// Конструктор с пользовательскими значениями 
+        /// даты создания и последнего редактирования.
+        /// Только для проведения тестов!
+        /// </summary>
+        /// <param name="testTime">Время создания</param>
+        public Note(DateTime testTime)
+        {
+            DateCreate = testTime;
+            DateModific = testTime;
         }
     }
 
