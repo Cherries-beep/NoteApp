@@ -6,7 +6,7 @@ namespace NoteApp.UnitTests
     class ProjectTests
     {
         /// <summary>
-        /// Экземпляр класса <see cref="Note"/> для проведения тестов
+        /// Экземпляр класса Note для проведения тестов
         /// </summary>
         private Note _note;
 
@@ -43,10 +43,10 @@ namespace NoteApp.UnitTests
         public void SelectedNoteIndex_CorrectValue_ReturnValue()
         {
             //Setup - инициализация проекта вынесена в атрибут [SetUp]
-            var expected = 35;
+            var expected = 30;
 
             //Actual
-            _project.SelectedNoteIndex = 35;
+            _project.SelectedNoteIndex = 30;
             var actual = _project.SelectedNoteIndex;
 
             //Assert
@@ -116,19 +116,17 @@ namespace NoteApp.UnitTests
         }
 
         /// <summary>
-        /// Вспомогательный метод заполнения списка
+        /// Метод заполнения списка (вспомогательный)
         /// </summary>
-        /// <param name="testTitle"></param>
-        /// <param name="tempProject"></param>
-        private void InsertNote(string testTitle,
+
+        private void InsertNote(string TestName,
             Project testProject, Category testCategory)
         {
-            //Без паузы между созданием новых заметок, 
-            //сравнение времени не бутет корректно
+            
             System.Threading.Thread.Sleep(10);
 
             var testNote = new Note();
-            testNote.Name = testTitle;
+            testNote.Name = TestName;
             testNote.Category = testCategory;
             testProject.Notes.Add(testNote);
         }

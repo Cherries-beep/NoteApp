@@ -14,7 +14,7 @@ namespace NoteApp.UnitTests
         private Note _note;
 
         /// <summary>
-        /// Экземпляр класса <see cref="Project"/> для проведения тестов
+        /// Экземпляр класса Project для проведения тестов
         /// </summary>
         private Project _project;
 
@@ -59,7 +59,7 @@ namespace NoteApp.UnitTests
             //Setup - инициализация проекта вынесена в атрибут [SetUp]
             var expected = Environment.GetFolderPath
                (Environment.SpecialFolder.ApplicationData)
-               + "\\Rybinsky\\NoteApp\\NoteApp.notes";
+               + "\\NoteApp\\NoteApp.json";
 
             //Actual
             var actual = ProjectManager.DefaultFileName;

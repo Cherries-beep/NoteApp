@@ -19,10 +19,10 @@ namespace NoteApp.UnitTests
         }
 
         [Test(Description = "Позитивный тест геттера и сеттера Name")]
-        public void Title_CorrectValue_ReturnValue()
+        public void Name_CorrectValue_ReturnValue()
         {
             //Setup - инициализация заметки вынесена в атрибут [SetUp]
-            var expected = "Test title for note";
+            var expected = "Test Name for note";
 
             //Actual - полученный результат
             _note.Name = expected;
@@ -30,11 +30,11 @@ namespace NoteApp.UnitTests
 
             //Assert - сравнение результата + текст сообщения об ошибке
             Assert.AreEqual(actual, expected,
-            "Геттер или сеттер Title возвращает неправильный текст");
+            "Геттер или сеттер Name возвращает неправильный текст");
         }
 
         [Test(Description = "Присвоение значения Name более чем 50 символов ")]
-        public void Title_LongTitle_ThrowsException()
+        public void Name_LongName_ThrowsException()
         {
             //Setup - инициализация заметки вынесена в атрибут [SetUp]
 
@@ -49,7 +49,7 @@ namespace NoteApp.UnitTests
 
         [Test(Description = "Присвоение пустой строки в качестве Name" +
             "По умолчанию - Без названия")]
-        public void Title_EmptyString_ReturnsUntitled()
+        public void Name_EmptyString_ReturnUntitled()
         {
             //Setup - инициализация заметки вынесена в атрибут [SetUp]
             var expected = "Untitled";
@@ -127,7 +127,7 @@ namespace NoteApp.UnitTests
             //Setup - инициализация заметки вынесена в атрибут [SetUp]
             var expectedTitle = "Untitled";
             string expectedText = null;
-            var expectedCategory = Category.Other;
+            var expectedCategory = Category.Work;
             var expectedCreated = DateTime.Now;
             var expectedModified = DateTime.Now;
 
@@ -180,9 +180,9 @@ namespace NoteApp.UnitTests
         public void NoteTestConstructor_CorrectValue_ReturnValue()
         {
             //Setup - инициализация заметки вынесена в атрибут [SetUp]
-            var expectedTitle = "Untitled";
+            var expectedName = "Untitled";
             string expectedText = null;
-            var expectedCategory = Category.Other;
+            var expectedCategory = Category.Work;
             var expectedCreated = new DateTime(2000, 01, 01);
             var expectedModified = expectedCreated;
 
@@ -190,9 +190,9 @@ namespace NoteApp.UnitTests
             var actual = new Note(new DateTime(2000, 01, 01));
 
             //Assert
-            Assert.AreEqual(expectedTitle, actual.Name,
+            Assert.AreEqual(expectedName, actual.Name,
                 "Стандартный конструктор возвращает неправильное имя заметки");
-            Assert.AreEqual(expectedText, actual.Name,
+            Assert.AreEqual(expectedText, actual.NoteText,
                 "Стандартный конструктор возвращает неправильный текст заметки");
             Assert.AreEqual(expectedCategory, actual.Category,
                 "Стандартный конструктор возвращает неправильную категорию заметки");
