@@ -96,8 +96,11 @@ namespace NoteApp
         public DateTime DateCreate
         {
             get { return _created; }
-            private set { _created = DateTime.Now; }
-    }
+            private set
+            {
+                _created = DateTime.Now;
+            }
+        }
 
         /// <summary>
         /// Устанавливает и возвращает значение даты последнего редактирования заметки.

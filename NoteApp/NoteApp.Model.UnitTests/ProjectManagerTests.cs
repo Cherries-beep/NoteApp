@@ -21,9 +21,9 @@ namespace NoteApp.UnitTests
         /// <summary>
         /// Путь к директории с тестовыми файлами
         /// </summary>
-        private static string _currentPath = Path.GetFullPath
-            (Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"))
-            + "TestData\\";
+        private static string _currentPath = AppDomain.CurrentDomain.BaseDirectory
+          + "TestData\\";
+        
 
         /// <summary>
         /// Путь к корректному файлу

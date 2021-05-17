@@ -21,7 +21,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест геттера и сеттера Name")]
         public void Name_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init();
             var expected = "Test Name for note";
 
             //Actual - полученный результат
@@ -36,7 +36,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Присвоение значения Name более чем 50 символов ")]
         public void Name_LongName_ThrowsException()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init();    
 
             //Actual - полученный результат
             var wrongName = "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr";
@@ -51,7 +51,7 @@ namespace NoteApp.UnitTests
             "По умолчанию - Без названия")]
         public void Name_EmptyString_ReturnUntitled()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init();
             var expected = "Untitled";
 
             //Actual - полученный результат
@@ -66,7 +66,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест геттера и сеттера Category")]
         public void Category_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init();
             var expected = Category.People;
 
             //Actual - полученный результат
@@ -81,7 +81,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест геттера и сеттера NoteText")]
         public void Text_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init();
             var expected = "Hello Hello Hello";
 
             //Actual - полученный результат
@@ -96,7 +96,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест геттера и сеттера DateCreate")]
         public void Created_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init();
             var expected = DateTime.Now;
 
             //Actual 
@@ -110,7 +110,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест геттера и сеттера DateModific")]
         public void Modified_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init();
             var expected = DateTime.Now;
 
             //Actual 
@@ -124,7 +124,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест стандартного конструктора класса Note")]
         public void NoteConstructor_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init();
             var expectedTitle = "Untitled";
             string expectedText = null;
             var expectedCategory = Category.Work;
@@ -151,7 +151,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест Json конструктора класса Note")]
         public void NoteJsoneConstructor_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init();
             var expectedTitle = "TestTitle";
             var expectedText = "TestText";
             var expectedCategory = Category.Work;
@@ -179,7 +179,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест конструктора для тестов")]
         public void NoteTestConstructor_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init();
             var expectedName = "Untitled";
             string expectedText = null;
             var expectedCategory = Category.Work;
@@ -206,7 +206,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест метода Clone")]
         public void Clone_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация заметки вынесена в атрибут [SetUp]
+            Note_Init(); 
             Note expected = _note;
 
             //Actual
