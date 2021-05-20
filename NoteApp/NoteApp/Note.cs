@@ -98,7 +98,8 @@ namespace NoteApp
             get { return _created; }
             private set
             {
-                _created = DateTime.Now;
+                _created =value;
+                
             }
         }
 
@@ -146,7 +147,7 @@ namespace NoteApp
             Name = name;
             NoteText = text;
             Category = category;
-            DateCreate = created;
+            DateCreate = DateTime.Now;
             DateModific = modified;
         }
 
