@@ -15,7 +15,7 @@ namespace NoteApp.UnitTests
         /// </summary>
         private Project _project;
 
-        [SetUp]
+       
         public void Project_Init()
         {
             _note = new Note();
@@ -25,7 +25,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест геттера и сеттера Notes")]
         public void Notes_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация проекта вынесена в атрибут [SetUp]
+            Project_Init();
             var expected = _note;
 
             //Actual
@@ -42,7 +42,7 @@ namespace NoteApp.UnitTests
             "SelectedNoteIndex")]
         public void SelectedNoteIndex_CorrectValue_ReturnValue()
         {
-            //Setup - инициализация проекта вынесена в атрибут [SetUp]
+            Project_Init();
             var expected = 30;
 
             //Actual
@@ -59,7 +59,7 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест метода Sort")]
         public void Sort_CorrectValue_ReturnSortedList()
         {
-            //Setup - инициализация проекта вынесена в атрибут [SetUp]
+            Project_Init();
             InsertNote("FirstNote", _project, Category.Other);
             InsertNote("SecondNote", _project,Category.Other);
             InsertNote("ThirdNote", _project, Category.Other);
@@ -86,7 +86,7 @@ namespace NoteApp.UnitTests
             "с фильтром по конкретной категории")]
         public void CategorySort_CorrectValue_ReturnSortedList()
         {
-            //Setup - инициализация проекта вынесена в атрибут [SetUp]
+            Project_Init();
             InsertNote("FirstNote", _project, Category.Finance);
             InsertNote("SecondNote", _project, Category.Work);
             InsertNote("ThirdNote", _project, Category.Finance);

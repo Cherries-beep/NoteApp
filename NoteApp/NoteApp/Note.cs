@@ -6,7 +6,7 @@ namespace NoteApp
     /// <summary>
     /// Заметки
     /// </summary>
-    public class Note : ICloneable
+    public class Note : ICloneable, IEquatable<Note>
     {
         /// <summary>
         /// Название заметки.
@@ -126,12 +126,21 @@ namespace NoteApp
             return this.MemberwiseClone();
         }
 
-        /// <summary>
-        /// Создает экземпляр <see cref="Note"> по умолчанию
-        /// </summary>
-        public Note()
+        public bool Equals(Note other)
         {
+            if (this.Name != other.Name)
+            {
+                return false;
+            }
+
+            return true;
         }
+
+        public override bool Equals(object other)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Создает экземпляр <see cref="Note"> для сериализации и десериализации
         /// </summary>
@@ -141,14 +150,14 @@ namespace NoteApp
         /// <param name="created">Время создания заметки</param>
         /// <param name="modified">Время последнего редактирования заметки</param>
         [JsonConstructor]
-        public Note(string name, string text, Category category,
-            DateTime created, DateTime modified)
+        public Note(string name, string noteText, Category category,
+            DateTime dateCreate, DateTime dateModific)
         {
             Name = name;
-            NoteText = text;
+            NoteText = noteText;
             Category = category;
-            DateCreate = DateTime.Now;
-            DateModific = modified;
+            DateCreate = dateCreate;
+            DateModific = dateModific;
         }
 
         /// <summary>
@@ -157,10 +166,10 @@ namespace NoteApp
         /// Только для проведения тестов!
         /// </summary>
         /// <param name="testTime">Время создания</param>
-        public Note(DateTime testTime)
+        public Note()
         {
-            DateCreate = testTime;
-            DateModific = testTime;
+            DateCreate = DateTime.Now;
+            DateModific = DateCreate;
         }
     }
 

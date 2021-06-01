@@ -12,8 +12,8 @@ namespace NoteApp.UnitTests
         ///</summary>
         private Note _note;
 
-        [SetUp]
-        public void Note_Init()
+        
+        public void Note_Init() 
         {
             _note = new Note();
         }
@@ -24,7 +24,7 @@ namespace NoteApp.UnitTests
             Note_Init();
             var expected = "Test Name for note";
 
-            //Actual - полученный результат
+            //Act - полученный результат
             _note.Name = expected;
             var actual = _note.Name;
 
@@ -38,7 +38,7 @@ namespace NoteApp.UnitTests
         {
             Note_Init();    
 
-            //Actual - полученный результат
+            //Act - полученный результат
             var wrongName = "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr";
 
             //Accert - сравнение результата + текст сообщения об ошибке
@@ -54,7 +54,7 @@ namespace NoteApp.UnitTests
             Note_Init();
             var expected = "Untitled";
 
-            //Actual - полученный результат
+            //Act - полученный результат
             _note.Name = "";
             var actual = _note.Name;
 
@@ -69,7 +69,7 @@ namespace NoteApp.UnitTests
             Note_Init();
             var expected = Category.People;
 
-            //Actual - полученный результат
+            //Act - полученный результат
             _note.Category = expected;
             var actual = _note.Category;
 
@@ -84,7 +84,7 @@ namespace NoteApp.UnitTests
             Note_Init();
             var expected = "Hello Hello Hello";
 
-            //Actual - полученный результат
+            //Act - полученный результат
             _note.NoteText = expected;
             var actual = _note.NoteText;
 
@@ -99,7 +99,7 @@ namespace NoteApp.UnitTests
             Note_Init();
             var expected = DateTime.Now;
 
-            //Actual 
+            //Act
             var actual = _note.DateCreate;
 
             //Accert - сравнение результата + текст сообщения об ошибке
@@ -113,7 +113,7 @@ namespace NoteApp.UnitTests
             Note_Init();
             var expected = DateTime.Now;
 
-            //Actual 
+            //Act
             var actual = _note.DateModific;
 
             //Accert - сравнение результата + текст сообщения об ошибке
@@ -131,7 +131,7 @@ namespace NoteApp.UnitTests
             var expectedCreated = DateTime.Now;
             var expectedModified = DateTime.Now;
 
-            //Actual - стандартный конструктор вызывается в атрибуте [SetUp]
+            //Act - стандартный конструктор вызывается в атрибуте [SetUp]
             var actual = _note;
 
             //Assert
@@ -158,7 +158,7 @@ namespace NoteApp.UnitTests
             var expectedCreated = DateTime.Now;
             var expectedModified = DateTime.Now;
 
-            //Actual
+            //Act
             var actual = new Note(expectedTitle, expectedText, expectedCategory,
             expectedCreated, expectedModified);
 
@@ -183,11 +183,11 @@ namespace NoteApp.UnitTests
             var expectedName = "Untitled";
             string expectedText = null;
             var expectedCategory = Category.Work;
-            var expectedCreated = new DateTime(2000, 01, 01);
+            var expectedCreated = DateTime.Now;
             var expectedModified = expectedCreated;
 
-            //Actual
-            var actual = new Note(new DateTime(2000, 01, 01));
+            //Act
+            var actual = new Note();
 
             //Assert
             Assert.AreEqual(expectedName, actual.Name,
@@ -209,7 +209,7 @@ namespace NoteApp.UnitTests
             Note_Init(); 
             Note expected = _note;
 
-            //Actual
+            //Act
             var actual = (Note)_note.Clone();
 
             //Assert
