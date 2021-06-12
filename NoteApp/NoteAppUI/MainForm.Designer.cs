@@ -76,6 +76,7 @@
             this.CategoryLabel.Size = new System.Drawing.Size(69, 17);
             this.CategoryLabel.TabIndex = 1;
             this.CategoryLabel.Text = "Category:";
+            this.CategoryLabel.Click += new System.EventHandler(this.CategoryLabel_Click);
             // 
             // NoteList
             // 
@@ -292,7 +293,8 @@
             this.Controls.Add(this.MenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "NoteApp";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

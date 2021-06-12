@@ -294,5 +294,15 @@ namespace NoteAppUI
         {
 
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CategoryLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
