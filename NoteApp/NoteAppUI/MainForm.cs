@@ -119,7 +119,7 @@ namespace NoteAppUI
                 //Добавляет заметку в отображаемый список
                 _reviewedNotes.Insert(0, note);
 
-                NoteList.SelectedIndex = 0;
+                NoteList.SelectedIndex = 0; 
 
                 ProjectManager.SaveData(_project, ProjectManager.DefaultFileName);
             }
