@@ -14,7 +14,7 @@ namespace NoteAppUI
     public partial class NoteForm : Form
     {
         /// <summary>
-        /// Поле для временного хранения переданных данных
+        /// Поле для временного хранения переданных данных 
         /// </summary>
         private Note _note;
 
